@@ -1,0 +1,27 @@
+SELECT employee_ID, name FROM (select employee_ID, name FROM employee_information WHERE division='HR') AS B
+INNER JOIN last_quarter_bonus ON 
+B.employee_ID=last_quarter_bonus.employee_ID
+WHERE last_quarter_bonus.bonus>=5000;
+
+
+SELECT roll_number, name FROM student_information INNER JOIN examination_marks 
+ON examination_marks.roll_number=student_information.roll_number
+
+
+SELECT customer_id, name , CONCAT('+', country_codes.country_code+phone_number) FROM 
+customers, country_codes WHERE customers.country=country_codes.country
+
+SELECT price_tomorrow.stock_code FROM price_today INNER JOIN price_tomorrow 
+ON price_today.stock_code=price_tomorrow.stock_code
+WHERE price_tomorrow.price>price_today.price ORDER BY price_tomorrow.stock_code;
+
+SELECT user_account.user_id as a, user_account.first_name as b, user_account.last_name as c,
+customer.id as d, customer.customer_name as e FROM customer, user_account, contact 
+WHERE COUNT(contact.user_account_id, contact.customer_id)>1;
+
+SELECT COUNT(contact.user_account_id, contact.customer_id) FROM contact 
+GROUP BY contact.user_account_id, contact.customer_id);
+
+SELECT COUNT(*) AS c count_m FROM contact 
+GROUP BY contact.user_account_id, contact.customer_id
+WHERE c>1;

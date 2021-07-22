@@ -1,0 +1,33 @@
+t = int(input())
+def check(lst,b):
+    lst[b] -= 1
+    if lst[-1]==9:
+        c = "".join([str(_) for _ in lst])
+        a = int(c)
+        a += 1
+        if c[0]=="0":
+            a = "0"+str(a)
+            lst = [int(d) for d in list(str(a))]
+        else:
+            lst = [int(d) for d in list(str(a))]
+    else:
+        lst[-1]+=1
+    return lst
+
+for kk in range(t):
+    n, k = list(map(int, input().split()))
+    lst = list(map(int, input().split()))
+    b = 0 
+    for i in range(k):
+        if lst[b]>0:
+            lst = check(lst, b)
+        elif lst[b]==0:
+            b+=1
+            lst = check(lst, b)   
+    print(" ".join(map(str, lst)))
+    
+    
+   
+   # logic 
+   
+   mene kya  kya ki hame minimum 

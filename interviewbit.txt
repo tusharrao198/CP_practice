@@ -1,0 +1,39 @@
+https://github.com/royalpranjal/Interview-Bit
+
+[ 2147483647, -2147483648, -2147483648, 0, 1 ]
+
+[-2147483648 1 2147483647 ] 
+
+vector<vector<int> > Solution::threeSum(vector<int> &A) {
+    vector<vector<long long int>> v;
+    // if(A.size() == 0){
+    //     return v;
+    // }
+    vector<pair<long long int, int> > v1(A.size());
+    for(int i = 0; i < A.size(); i++){
+        v1[i] = {A[i], i};
+    }
+    sort(v1.begin(), v1.end());
+    set<vector<long long int>> mp; 
+
+    for(int i = 0; i < A.size(); i++){
+        long long int firset = v1[i].first;
+        int j = i+1;
+        int k = A.size()-1;
+        while(j < k){
+            long long int target = (((long long int)firset) + v1[j].first + v1[k].first);
+            if(target== 0){
+                vector<long long int> v2({A[v1[i].second], A[v1[j].second], A[v1[k].second]});
+                sort(v2.begin(), v2.end());
+                if(mp.find(v2) == mp.end()){
+                    v.push_back(v2);
+                    mp.insert(v2);
+                }
+                j++; k--;
+            }else if(target< 0){
+                j++;
+            }else k--;
+        }
+    }
+    return v;
+}
