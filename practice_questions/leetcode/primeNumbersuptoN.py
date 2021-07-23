@@ -1,14 +1,6 @@
+import math
+
 class Solution:
-	# @param A : integer
-	# @return a list of integers
-	def sieve(self, A):
-        arr = self.countPrimes(A)
-        pos = []
-        n = len(arr)
-        for i in range(n):
-            if arr[i]:
-                pos.append(i)
-        return pos
 
     def countPrimes(self, n):
         if n < 2:
@@ -20,3 +12,17 @@ class Solution:
                 for j in range(i ** 2, n+1, i):  # multiples of i set to False
                     arr[j] = False
         return arr
+
+    def sieve(self, A):
+        arr = self.countPrimes(A)
+        pos = []
+        n = len(arr)
+        for i in range(n):
+            if arr[i]:
+                pos.append(i)
+        return pos
+
+
+s = Solution()
+x = s.sieve(10)
+print(x)
