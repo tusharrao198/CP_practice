@@ -28,3 +28,15 @@ g.insertEdge(7,1)
 
 print(g.printGraph())
 
+# -------------------------------
+# with inputs
+tt = int(input())
+for _ in range(tt):
+    nodes = int(input())
+    lst = list(map(int, input().split()))
+    g = Graph()
+    for edge in range(nodes-1):
+        u, v = map(int, input().split())
+        g.insertEdge(u, v)
+    g.printGraph()
+
