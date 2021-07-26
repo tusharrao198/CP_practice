@@ -3,6 +3,7 @@ from bisect import bisect_left, bisect_right   # https: // docs.python.org/3/lib
 from typing import List
 from math import ceil, floor, gcd, sqrt
 
+
 def index(a, x):
     # 'Locate the leftmost value exactly equal to x'
     i = bisect_left(a, x)
@@ -53,8 +54,16 @@ def find_ge(a, x):
 
 # https://stackoverflow.com/questions/4233476/sort-a-list-by-multiple-attributes/4233482
 
-tt = int(input())
-for _ in range(tt):
-    n, a, b = map(int, input().split())
-    lst = list(map(int, input().split()))
-    num = int(input())
+
+def main():
+    tt = int(input())
+    for _ in range(tt):
+        n, a, b = map(int, input().split())
+        lst1 = list(map(int, input().split()))
+        lst2 = list(map(int, input().split()))
+        target = int(input())
+        ans = ""
+        return ans
+
+
+main()
