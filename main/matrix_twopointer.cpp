@@ -39,7 +39,7 @@ int main()
     while (t--)
     {
         vector<vector<int>> dd;
-        ll val, cols, rows, x;
+        ll val, cols, rows, x; 
         cin >> rows >> cols >> x;
         for (int i = 0; i < rows; i++)
         {
@@ -57,10 +57,12 @@ int main()
             }
             cout << endl;
         }
+        cout << "RUN " <<endl;
         search_(dd, rows, cols, x);        
     }
     return 0;
 }
+
 
 /* Searches the element x in d[][]. If the
 element is found, then prints its position

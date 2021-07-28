@@ -59,6 +59,4 @@ s = "xiEjBOGeHIMIlslpQIZ6jERaAVoHUc9Hrjlv7pQpUSY8oHqXoQYWWll8Pumov89wXDe0Qx6bEjs
 t = "dO4BRDaT1wd0YBhH88Afu7CI4fwAyXM8pGoGNsO1n8MFMRB7qugS9EPhCauVzj7h"
 
 # print(s)
-print(minWindow(s,t))
 print(minimumWindowSubstring(s, t))
-#

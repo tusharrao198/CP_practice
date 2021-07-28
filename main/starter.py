@@ -1,7 +1,8 @@
 from itertools import permutations, combinations, combinations_with_replacement
-from bisect import bisect_left, bisect_right   # https: // docs.python.org/3/library/bisect.html
+from bisect import bisect_left, bisect_right  # https: // docs.python.org/3/library/bisect.html
 from typing import List
 from math import ceil, floor, gcd, sqrt
+from itertools import accumulate
 
 
 def index(a, x):
@@ -16,7 +17,7 @@ def find_lt(a, x):
     # 'Find rightmost value less than x'
     i = bisect_left(a, x)
     if i:
-        return a[i-1]
+        return a[i - 1]
     return -1
 
 
@@ -24,7 +25,7 @@ def find_le(a, x):
     # 'Find rightmost value less than or equal to x'
     i = bisect_right(a, x)
     if i:
-        return a[i-1]
+        return a[i - 1]
     return -1
 
 
@@ -42,6 +43,13 @@ def find_ge(a, x):
     if i != len(a):
         return a[i]
     return -1
+
+
+def prefix_sum(arr):
+    # lst = [1, 2, 3, 4, 5, 6]
+    # return [1, 3, 6, 10, 15, 21]
+    prefix_sum = accumulate(arr)
+    return [i for i in prefix_sum]
 
 # How to sort dictionary :-
 # dd = {k: v for k, v in sorted(dd.items(), key=lambda x: x[1], reverse=True)}

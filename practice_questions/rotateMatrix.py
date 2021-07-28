@@ -4,7 +4,7 @@ def rotateMatrix(mat):
             temp = mat[r][c]
             mat[r][c] = mat[c][r]
             mat[c][r] = temp
-
+    # print(mat)
     for r in range(len(mat)):
         for c in range(len(mat[r])//2):
             temp = mat[r][c]
@@ -19,4 +19,5 @@ for _ in range(tt):
     # lst1 = list(map(int, input().split()))
     # lst2 = list(map(int, input().split()))
     lst = [[1, 2, 3], [4,5,6], [7,8,9]]
+    lst = [[1,2], [3,4]]
     print(rotateMatrix(lst))
