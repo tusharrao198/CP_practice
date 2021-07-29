@@ -24,25 +24,40 @@ def knapsack1(arr, wt, w, n):  # iterative approach
     mat = [[-1 for i in range(w + 1)] for j in range(n + 1)]
     for i in range(n + 1):
         for j in range(w + 1):
-            if i == 0 and j == 0:
+            if i == 0 or j == 0:
                 mat[i][j] = 0
 
             elif wt[i - 1] <= j:
-                mat[i][j] = max((arr[i - 1] + mat[i - 1][j - wt[i - 1]]),
-                                mat[i - 1][j])
+                mat[i][j] = max(
+                    (arr[i - 1] + mat[i - 1][j - wt[i - 1]]),
+                                mat[i - 1][j]
+                                )
 
             elif wt[i - 1] > j:
-                mat[i][j] = mat[i - 1][j]
-
-    return mat[n][w]
+                mat[i][j] = mat[i-1][j]
 
 
-arr = [1, 3, 4, 5]
-wt = [1, 4, 5, 7]
-n = len(arr)
+    return mat[n][j]
+
+
+# arr = [1, 3, 4, 5]
+# wt = [1, 4, 5, 7]
 # w = int(input())
-w = 7
+# w = 7
 
+arr = [359, 963, 465, 706, 146, 282, 828, 962, 492]
+wt = [96, 43, 28, 37, 92, 5, 3, 54, 93]
+w = 383
+
+
+# arr = [468, 335, 501, 170, 725, 479, 359, 963, 465, 706, 146, 282, 828, 962, 492, 996, 943, 828, 437, 392, 605,
+#     903, 154, 293, 383, 422, 717, 719, 896, 448, 727, 772, 539, 870, 913, 668, 300, 36, 895, 704, 812, 323]
+# wt = [4, 4, 5, 2, 2, 4, 9, 8, 5, 3, 8, 8, 10, 4, 2, 10, 9, 7, 6, 1, 3,
+#     9, 7, 1, 3, 5, 9, 7, 6, 1, 10, 1, 1, 7, 2, 4, 9, 10, 4, 5, 5, 7]
+# w =  841
+
+n = len(arr)
 # print(mat)
 print(knapsack(arr, wt, w, n))
 print(knapsack1(arr, wt, w, n))
+print(5189-5057)

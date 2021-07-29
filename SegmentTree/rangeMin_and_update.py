@@ -2,7 +2,7 @@ import sys
 from math import ceil, log2
 
 MAX_SIZE = sys.maxsize
-
+MIN_SIZE = float("-inf")
 
 def getMid(a, b):
     return (a + b) // 2
@@ -68,18 +68,44 @@ def rangeMin(tree, n, qs, qe):
     return rangeMinMain(tree, 0, n - 1, qs, qe, 0)
 
 
+def rangeMaxMain(tree, low, high, qs, qe, pos):
+    if qs <= low and qe >= high:
+        return tree[pos]
+
+    # If segment of this node
+    # is outside the given range
+
+    if high < qs or low > qe:
+        return MIN_SIZE
+    # If a part of this segment
+    # overlaps with the given range
+
+    mid = getMid(low, high)
+
+    return max(rangeMaxMain(tree, low, mid, qs, qe, 2 * pos + 1),
+               rangeMaxMain(tree, mid + 1, high, qs, qe, 2 * pos + 2))
+
+
+def rangeMax(tree, n, qs, qe):
+    if qs < 0 or qe > n - 1 or qs > qe:
+        return "INVALID INPUT"
+    return rangeMaxMain(tree, 0, n - 1, qs, qe, 0)
+
+
 def main():
     arr = [11, 2, 4, -1]
     print(f"arr = {arr}")
     n = len(arr)
     segment_tree = buildTree(arr, n)
     print(f"segment_tree before = {segment_tree}")
-    print(f"Min before = {rangeMin(segment_tree, n, 0, 2)}")
-    index, new_val = 0, -1
-    updateVal(segment_tree, arr, n, index, new_val)
-    print(f"arr after = {arr}")
-    print(f"segment_tree after = {segment_tree}")
-    print(f"Min after = {rangeMin(segment_tree, n, 2, 3)}")
+    # print(f"Min before = {rangeMin(segment_tree, n, 0, 2)}")
+    # index, new_val = 0, -1
+    # updateVal(segment_tree, arr, n, index, new_val)
+    # print(f"arr after = {arr}")
+    # print(f"segment_tree after = {segment_tree}")
+    print(f"Min after = {rangeMin(segment_tree, n, 1, 3)}")
+    print(f"Max after = {rangeMax(segment_tree, n, 1, 3)}")
+
 
 
 main()
