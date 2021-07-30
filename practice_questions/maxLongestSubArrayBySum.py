@@ -22,6 +22,7 @@ tt = 1
 for _ in range(tt):
     # lst = [1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10]
     # lst = [2, 3, 1, 2, 4, 3]
-    lst = [1, 1, 1, 1, 1, 1, 1, 1]
-    target = 7
+    # lst = [1, 1, 1, 1, 1, 1, 1, 1]
+    lst = [1 ,2 ,-2 ,4 ,-4]
+    target = 0
     print(maxLongestSubArrayBySum(lst, target))

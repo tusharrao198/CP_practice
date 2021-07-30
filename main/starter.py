@@ -71,7 +71,7 @@ def main():
         lst2 = list(map(int, input().split()))
         target = int(input())
         ans = ""
-        return ans
+        print(ans)
 
 
 main()
