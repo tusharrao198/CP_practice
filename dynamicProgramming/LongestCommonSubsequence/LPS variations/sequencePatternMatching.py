@@ -1,11 +1,10 @@
-# minimum Number of deletion in a string to make it Palindromic
+# sequencePatternMatching
 
-# LPS is inversely proportional to no. of deletion
-
+# Given a string a and b, find that if a is a subsequence of b.
 global dp
 
-
-def longestPalindromicSubsequence(x, y, m, n):
+# Longest Common Subsequence
+def LCS(x, y, m, n):
     for c in range(n+1):
         dp[0][c] = 0
 
@@ -24,18 +23,18 @@ def longestPalindromicSubsequence(x, y, m, n):
     return dp[m][n]
 
 
-def minDeletiontomakeStringPalindromic(x, y,m ,n):
-    lps = longestPalindromicSubsequence(x, y, m, n)
-    return m - lps
+def sequencePatternMatching(x, y, m, n):
+    lcs = LCS(x, y, m, n)
+    if lcs==len(x):
+        return True
+    return False
 
-x = "AGGTAB"
-# x = "agbcba"
-m = len(x)
 
-y = x[::-1]  # reverse of x
-n = len(y)
+x, y = "axy", "acxdfy"
+m, n = len(x), len(y)
 
 # table initalized globally
 dp = [[0 for _ in range(n+1)] for __ in range(m+1)]
 
-print(minDeletiontomakeStringPalindromic(x, y , m , n))
+print(sequencePatternMatching(x, y, m, n))
+

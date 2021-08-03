@@ -17,8 +17,13 @@ from math import factorial as f
 
 # This pattern of getting binomial coefficients is called Pascal’s rule.
 
+from typing import *
+
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
+        def f(n):
+            if n==1 or n==0: return 1
+            return n*f(n-1)
         res = []
         for i in range(numRows):
             lst = []
@@ -27,3 +32,7 @@ class Solution:
                 lst.append(x)
             res.append(lst)
         return res
+
+s = Solution()
+x = s.generate(5)
+print(x)

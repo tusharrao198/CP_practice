@@ -35,6 +35,7 @@ def MinimumNumberOfInsertion_Deletion(x, y, m, n):
 #  2 deletion      / 
 #     \           /
 #           ea 
+# insertion = 
 
 x, y = 'heap', 'pea'
 m, n = len(x), len(y)
