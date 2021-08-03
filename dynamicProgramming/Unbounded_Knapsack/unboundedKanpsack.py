@@ -19,7 +19,7 @@ def unbounded_knapsack(val, wt, w, n):  # iterative approach
             elif wt[i - 1] > j:
                 dp[i][j] = dp[i-1][j]
 
-    return dp[n][j]
+    return dp[n][w]
 
 
 # val = [1, 3, 4, 5]

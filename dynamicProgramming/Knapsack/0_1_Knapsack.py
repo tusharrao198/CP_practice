@@ -37,7 +37,7 @@ def knapsack1(arr, wt, w, n):  # iterative approach
                 dp[i][j] = dp[i-1][j]
 
 
-    return dp[n][j]
+    return dp[n][w]
 
 
 # arr = [1, 3, 4, 5]
@@ -60,4 +60,3 @@ n = len(arr)
 # print(mat)
 print(knapsack(arr, wt, w, n))
 print(knapsack1(arr, wt, w, n))
-print(5189-5057)
