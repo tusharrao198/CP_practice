@@ -39,7 +39,8 @@ def longestRepeatingSubsequence(x, y, m, n):
 
 
 # x, y = "abcdwrt", "abcefghw"
-x = "AABEBCDD"
+# x = "AABEBCDD"
+x = "ABBA"
 y = x
 m, n = len(x), len(y)
 

@@ -4,6 +4,7 @@ global mat
 
 def knapsack(arr, wt, w, n):  # recursive approach with memoization
     mat = [[-1 for i in range(w + 1)] for j in range(n + 1)]
+
     if n == 0 or w == 0:
         mat[n][w] = 0
         return mat[n][w]
@@ -30,12 +31,11 @@ def knapsack1(arr, wt, w, n):  # iterative approach
             elif wt[i - 1] <= j:
                 dp[i][j] = max(
                     (arr[i - 1] + dp[i - 1][j - wt[i - 1]]),
-                                dp[i - 1][j]
-                                )
+                    dp[i - 1][j]
+                )
 
             elif wt[i - 1] > j:
-                dp[i][j] = dp[i-1][j]
-
+                dp[i][j] = dp[i - 1][j]
 
     return dp[n][w]
 
@@ -48,7 +48,6 @@ def knapsack1(arr, wt, w, n):  # iterative approach
 arr = [359, 963, 465, 706, 146, 282, 828, 962, 492]
 wt = [96, 43, 28, 37, 92, 5, 3, 54, 93]
 w = 383
-
 
 # arr = [468, 335, 501, 170, 725, 479, 359, 963, 465, 706, 146, 282, 828, 962, 492, 996, 943, 828, 437, 392, 605,
 #     903, 154, 293, 383, 422, 717, 719, 896, 448, 727, 772, 539, 870, 913, 668, 300, 36, 895, 704, 812, 323]
