@@ -27,7 +27,7 @@ def countOfSubsetSum(arr, n, _sum):
 
 
 # arr = [2, 3, 4, 6, 5, 8, 10]
-arr = [1, 6, 5, 11, 9]
+arr = [1, 6, 5, 2, 11, 9]
 n = len(arr)
 _sum = 11
 print(countOfSubsetSum(arr, n, _sum))

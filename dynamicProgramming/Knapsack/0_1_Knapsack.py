@@ -1,24 +1,24 @@
 # using memoization
-global mat
+# global dp
 
 
 def knapsack(arr, wt, w, n):  # recursive approach with memoization
-    mat = [[-1 for i in range(w + 1)] for j in range(n + 1)]
+    dp = [[-1 for i in range(w + 1)] for j in range(n + 1)]
 
     if n == 0 or w == 0:
-        mat[n][w] = 0
-        return mat[n][w]
+        dp[n][w] = 0
+        return dp[n][w]
 
-    if mat[n][w] != -1:
-        return mat[n][w]
+    if dp[n][w] != -1:
+        return dp[n][w]
 
     if wt[n - 1] <= w:
-        mat[n][w] = max(arr[n - 1] + knapsack(arr, wt, w - wt[n - 1], n - 1), knapsack(arr, wt, w, n - 1))
-        return mat[n][w]
+        dp[n][w] = max(arr[n - 1] + knapsack(arr, wt, w - wt[n - 1], n - 1), knapsack(arr, wt, w, n - 1))
+        return dp[n][w]
 
     elif wt[n - 1] > w:
-        mat[n][w] = knapsack(arr, wt, w, n - 1)
-        return mat[n][w]
+        dp[n][w] = knapsack(arr, wt, w, n - 1)
+        return dp[n][w]
 
 
 def knapsack1(arr, wt, w, n):  # iterative approach
@@ -56,6 +56,6 @@ w = 383
 # w =  841
 
 n = len(arr)
-# print(mat)
+# print(dp)
 print(knapsack(arr, wt, w, n))
 print(knapsack1(arr, wt, w, n))
