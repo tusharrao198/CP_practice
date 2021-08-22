@@ -1,3 +1,5 @@
+import math
+
 class Solution:
     # @param A : integer
     # @return an integer
@@ -13,3 +15,7 @@ class Solution:
             if A % i == 0:
                 return 0
         return 1
+
+S = Solution()
+ans = S.isPrime(83)
+print(ans)
