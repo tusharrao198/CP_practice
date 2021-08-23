@@ -1,6 +1,8 @@
-# count of subset with given sum
+# https://www.geeksforgeeks.org/number-of-subsets-with-sum-divisible-by-m-set-2/
 
-def countOfSubsetSum(arr, n, _sum):
+# count of subset with given sum divisible by k
+
+def countOfSubsetSumDivisiblebyK(arr, n, _sum, k):
     dp = [[0 for _ in range(_sum + 1)] for i in range(n + 1)]
 
     # initialization
@@ -25,7 +27,17 @@ def countOfSubsetSum(arr, n, _sum):
                 dp[i][j] = dp[i - 1][j]
     for i in dp:
         print(i)
-    return dp[n][_sum]
+    
+    count = 0
+    for i in range(1, _sum+1):
+        print("A ",i , dp[n][i])
+        if dp[n][i]>0:
+            print("T ", i)
+            if i%k==0:
+                print("B ", i, dp[n][i])
+                count+=dp[n][i]
+
+    return count
 
 
 # arr = [2, 3, 4, 6, 5, 8, 10]
@@ -33,7 +45,9 @@ def countOfSubsetSum(arr, n, _sum):
 # n = len(arr)
 # _sum = 11
 
-arr = [1, 2, 3]
+# arr = [1, 2, 3]
+arr = [3,3,3,3]
 n = len(arr)
-_sum = 6
-print(countOfSubsetSum(arr, n, _sum))
+_sum = sum(arr)
+k = 6
+print(countOfSubsetSumDivisiblebyK(arr, n, _sum, k))
