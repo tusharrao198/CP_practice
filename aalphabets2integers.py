@@ -12,5 +12,5 @@ def alph2int(s):
     return ans
 
 
-# s = "GOVERNMENT"
-# print(alph2int(s))
+s = "GOVERNMENT"
+print(alph2int(s))

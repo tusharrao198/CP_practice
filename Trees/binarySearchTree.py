@@ -23,7 +23,7 @@ class BST:
             else:
                 self.insert(root.left, node)
 
-
+    # root => left => right
     def preOrderTraversal(self, node):
         if node is not None:
             print(node.data, end =" ")
@@ -80,24 +80,28 @@ class BST:
         return node
 
         
-node = Node(5)
+node = Node(20)
 tree = BST()
 
-tree.insert(node, Node(3))
-tree.insert(node, Node(2))
-tree.insert(node, Node(4))
-tree.insert(node, Node(7))
-tree.insert(node, Node(6))
-tree.insert(node, Node(8))
+tree.insert(node, Node(10))
+tree.insert(node, Node(15))
+tree.insert(node, Node(20))
+tree.insert(node, Node(30))
+# tree.insert(node, Node(3))
+# tree.insert(node, Node(2))
+# tree.insert(node, Node(4))
+# tree.insert(node, Node(7))
+# tree.insert(node, Node(6))
+# tree.insert(node, Node(8))
 
 tree.preOrderTraversal(node)
 # root -> left -> right
 print()
 
-# x = tree.searchNode(node, 6)
+# x = tree.searchNode(node, 5)
 # print(x.data)
 
-print(tree.deleteNode(node, 7))
+print(tree.deleteNode(node, 10))
 
 tree.preOrderTraversal(node)
 # root -> left -> right
