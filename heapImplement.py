@@ -1,12 +1,12 @@
 from typing import List
 import heapq
 
-arr = [1,5,4,6,8,9,90,4,3,3]
+arr = [1, 5, 4, 6, 8, 9, 90, 4, 3, 3]
 
-# minheap creation in O(n) time 
+# minheap creation in O(n) time
 heapq.heapify(arr)
 
-# heappop method to pop smallest element in O(logn) 
+# heappop method to pop smallest element in O(logn)
 x = heapq.heappop(arr)
 print(x)
 
@@ -23,6 +23,7 @@ class MaxHeap:
 
     def pop(self):
         return -heapq.heappop(self.data)
+
 
 # maxheap creation in O(n) time
 max_heap = MaxHeap()

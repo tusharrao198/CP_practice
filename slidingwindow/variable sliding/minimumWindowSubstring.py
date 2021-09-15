@@ -1,4 +1,4 @@
-# # For inderstading logic
+# # For understading logic
 # @ Aditya Verma Channel Variable sliding
 # # https://youtu.be/iwv1llyN6mo
 #
@@ -43,8 +43,8 @@ def minimumWindowSubstring(string, t):
 
     if min_size != inf:
         # print(min_size)
-        return string[i: min_size + i]
-    return ''
+        return string[i : min_size + i]
+    return ""
 
 
 # s = "TOTMTAPTAT"
