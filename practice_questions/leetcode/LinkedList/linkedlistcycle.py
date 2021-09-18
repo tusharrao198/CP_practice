@@ -6,6 +6,32 @@ class ListNode:
 
 
 class Solution:
+    # @param A : head node of linked list
+    # @return the first node in the cycle in the linked list
+    def detectCycle(self, A):
+        turtle = A
+        hare = A
+
+        isCycle = False
+        while turtle and hare and hare.next:
+            hare = hare.next.next
+            turtle = turtle.next
+            if turtle == hare:
+                isCycle = True
+                break
+
+        if not isCycle:
+            return None
+
+        # if crossed this condtion then it's sure that there is a cycle present
+        # so we check the node where the cycle begins
+        # keeping turtle at head and incrementing to know the cycle
+        turtle = A
+        while turtle != hare:
+            turtle = turtle.next
+            hare = hare.next
+        return turtle
+
     def hasCycle(self, head: ListNode) -> bool:
         # using two pointers turtle and hare set to head
         turtle = head
