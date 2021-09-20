@@ -1,3 +1,5 @@
+# not completed
+
 # to check if any subset with sum equal to sum_ value
 def subsetSum(arr, n, sum_) -> bool:
     dp = [[0 for _ in range(sum_ + 1)] for i in range(n + 1)]
