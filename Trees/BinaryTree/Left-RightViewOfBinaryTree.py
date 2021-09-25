@@ -46,6 +46,27 @@ def printLeftView(root):
                 q.append(node.right)
 
 
+def printRightView(root):
+    if root is None:
+        return
+
+    q = deque()
+    q.append(root)
+
+    while len(q) > 0:
+        n = len(q)
+        for i in range(1, n + 1):
+            node = q.popleft()
+            if i == n:  # i = 1 for left view and n for right view
+                print(node.val)
+
+            if node.left != None:
+                q.append(node.left)
+
+            if node.right != None:
+                q.append(node.right)
+
+
 root = newNode(10)
 root.left = newNode(2)
 root.right = newNode(3)

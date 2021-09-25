@@ -11,10 +11,19 @@ class Node:
 # in O(n) time  and O(n) space
 
 
-def SumNodesRecurive(root):  # recursive
+def SumNodesRecurive1(root):  # recursive
     if root is None:
         return 0
     return SumNodesRecurive(root.left) + SumNodesRecurive(root.right) + root.val
+
+
+def SumNodesRecurive(root, s):  # recursive
+    if root is None:
+        return 0
+    s[0] += root.val
+    SumNodesRecurive(root.left, s)
+    SumNodesRecurive(root.right, s)
+    print(root.val, s)
 
 
 def SumNodesIterative(root):  # using level order traversal
@@ -45,5 +54,9 @@ root.right.right = Node(15)
 root.right.left = Node(12)
 root.right.right.left = Node(14)
 
-print("\n SumNodesRecurive = ", SumNodesRecurive(root))
+# print("\n SumNodesRecurive = ", SumNodesRecurive(root))
 print("\n SumNodesIterative = ", SumNodesIterative(root))
+
+s = [0]
+SumNodesRecurive(root, s)
+print(s)

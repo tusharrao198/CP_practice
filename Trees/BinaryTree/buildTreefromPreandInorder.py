@@ -1,3 +1,35 @@
+# https://www.interviewbit.com/problems/construct-binary-tree-from-inorder-and-preorder/
+
+# Definition for a  binary tree node
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution:
+    # @param preorder : list of integers
+    # @param inorder : list of integers
+    # @return the root node in the tree
+    def buildTree(self, preorder, inorder):
+        if not inorder:
+            return None
+
+        root_pos = inorder.index(preorder[0])
+        new_node = TreeNode(preorder[0])
+
+        new_node.left = self.buildTree(preorder[1 : root_pos + 1], inorder[:root_pos])
+
+        new_node.right = self.buildTree(
+            preorder[root_pos + 1 :], inorder[root_pos + 1 :]
+        )
+
+        return new_node
+
+
+#########################################################################################
+
 # Binary Tree Node
 class Node:
     def __init__(self, key):
