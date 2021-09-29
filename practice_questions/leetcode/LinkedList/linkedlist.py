@@ -43,12 +43,11 @@ class linkedList:
             temp = None
             return
 
-        count = 1
+        prev_pos = 1
         prevnode = self.head
-        while count < pos:
+        while prev_pos < pos:
             prevnode = prevnode.next
-            count += 1
-        prev_pos = count
+            prev_pos += 1
         nextnode = prevnode.next.next
         prevnode.next = None
         prevnode.next = nextnode
