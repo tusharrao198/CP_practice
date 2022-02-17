@@ -4,8 +4,8 @@
         "string": "cpp",
         "iostream": "cpp"
     },
-    "python.linting.flake8Enabled": false,
-    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "editor.fontSize": 20,
     "files.autoSave": "onWindowChange"

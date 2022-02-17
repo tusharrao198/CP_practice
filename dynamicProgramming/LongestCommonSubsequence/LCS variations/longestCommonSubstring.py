@@ -52,7 +52,7 @@ def LCSubStr(s, t, n, m):
 
 
 x, y = "OldSite:GeeksforGeeks.org", "NewSite:GeeksQuiz.com"
-
+x,y="hello", "ello"
 # Time Complexity: O(m*n)
 # Auxiliary Space: O(m*n)
 

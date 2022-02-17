@@ -16,11 +16,11 @@ class Solution:
     
     #################
     # sol2
-    # def twoSum(self, nums: List[int], target: int) -> List[int]:
-    #     pos = {}
-    #     for i in range(len(nums)):
-    #         diff = target - nums[i]
-    #         if diff in pos.keys():
-    #             return [pos[diff], i]
-    #         pos[nums[i]] = i
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        pos = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in pos.keys():
+                return [pos[diff], i]
+            pos[nums[i]] = i
         
