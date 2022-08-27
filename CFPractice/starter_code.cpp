@@ -5,7 +5,31 @@
 #define MAXN 100001
 #define mod 1000000007
 using namespace std;
-#define pb push_back
+#define pb push_back\
+
+void solve(){
+    ll n; cin >> n;
+        string s, t;
+        cin >> s >> t; 
+        for (int i = 0; i < (n - 1); i++){
+            if(s[i]!=t[i]){
+                if(t[i] == 'a'){
+                    cout << "NO\n";
+                    return;
+                }
+                if(t[i] == 'b' && (s[i] != 'a')){
+                    cout << "NO\n";
+                    return;
+                }
+                if(t[i]=='c' && (s[i]!='b' || )){
+                    cout << "NO\n";
+                }
+            }
+        }
+        if(s[n-1] ==t[n-1]) cout << "YES\n";
+        else
+            cout << "NO\n";
+}
 
 int main()
 {
@@ -15,23 +39,6 @@ int main()
     cin >> t; // testcase
     while (t--)
     {
-        ll n, min_, max_, diff;
-        vector<int> arr;
-        cin >> n;
-        for (ll int i = 0; i < n; i++)
-        {
-            ll x;
-            cin >> x;
-            arr.pb(x);
-        }
-        max_ = *max_element(arr.begin(), arr.end());
-        min_ = *min_element(arr.begin(), arr.end());
-        cout << "max => " << max_ << endl;
-        cout << "min => " << min_ << endl;
-
-        // for (ll int i = 0; i < n; i++)
-        // {
-        //     cout << "max => " << arr[i] << endl;
-        // }
+        solve();
     }
 }

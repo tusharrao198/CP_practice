@@ -31,14 +31,13 @@ class Solution:
             # print(mid, arr[mid], prev, nex, l, r)
 
             if arr[prev] >= arr[mid] and arr[mid] <= arr[nex]:
-                return mid
+                return arr[mid]
 
             if arr[n - 1] <= arr[mid]:
                 l = mid + 1
 
             elif arr[mid] <= arr[n - 1]:
                 r = mid - 1
-        # return mid
 
 
 arr = [4, 5, 6, 7, 0, 1, 2]

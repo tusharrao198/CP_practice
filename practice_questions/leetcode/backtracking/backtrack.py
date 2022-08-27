@@ -1,12 +1,6 @@
 # /usr/bin/python3
 
-# approached using backtracking recursively
-# https://leetcode.com/problems/subsets/   without duplicates
-# and
-# https://www.interviewbit.com/problems/subset/
-
 from typing import List
-
 
 class Solution:
     def solve(self, nums, ans, cur, index):
@@ -20,17 +14,18 @@ class Solution:
             # print(f"i = {i} and nums[i] = {nums[i]}")
             if nums[i] not in cur:
                 cur.append(nums[i])
-                # print(f"{nums, ans, cur, i}")
+                print(f"{ans, cur, i}")
                 self.solve(nums, ans, cur, i)
-                x = cur.pop()
+                # x = cur.pop()
+                cur.clear()
                 # print(f"pop = {x}")
         return
 
     def subsets(self, nums: List[int]) -> List[List[int]]:
         ans = []
         cur = []
-        nums.sort()
-        # print(nums)
+        # nums.sort()
+        print(nums)
         self.solve(nums, ans, cur, 0)
         return ans
 

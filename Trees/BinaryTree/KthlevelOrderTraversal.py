@@ -8,7 +8,7 @@ class Node:
         self.right = None
 
 
-def levelOrder(root):
+def levelOrder(root): # not complete
     if root is None:
         return
     q = deque()
@@ -43,7 +43,7 @@ def levelOrder1(root, k):
             if node.right != None:
                 q.append(node.right)
         elif len(q) > 0:
-            level += 1
+            level += 1  
             q.append(None)
     print("\n", sum_)
 
@@ -57,4 +57,4 @@ root.right.right = Node(15)
 root.right.left = Node(12)
 root.right.right.left = Node(14)
 
-levelOrder1(root, 1)
+levelOrder1(root, 2)
